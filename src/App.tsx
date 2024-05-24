@@ -12,7 +12,11 @@ import {
 } from 'react-router-dom';
 import Home from './components/home';
 import Nav from './components/Nav';
+<<<<<<< HEAD
 import Dashboard from './components/dashboard';
+=======
+import All_Evidence from './components/All_evidence';
+>>>>>>> origin/master
 const queryClient = new QueryClient();
 
 const networks = {
@@ -57,7 +61,11 @@ function App() {
               </QueryClientProvider>
             }
           />
+<<<<<<< HEAD
           <Route path='/dashboard' element={<Dashboard />}/>
+=======
+          <Route path='/dashboard' element={<All_Evidence/>  }/>
+>>>>>>> origin/master
             
         </Routes>
       </Router>
