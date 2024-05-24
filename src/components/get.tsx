@@ -65,10 +65,6 @@ export default function GetEvidence() {
         try {
             setLoading(true);
             setError(null);
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
             // Convert evidence ID to number
             const evidenceIdNumber = parseInt(evidenceId, 10);
             if (isNaN(evidenceIdNumber)) {

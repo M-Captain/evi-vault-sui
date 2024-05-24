@@ -295,8 +295,4 @@ export default function AddEvidence() {
             </div>
         </div>
     );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/master
