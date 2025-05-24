@@ -1,4 +1,5 @@
 import Wallet from './Wallet'
+<<<<<<< HEAD
 import {  useWalletKit } from '@mysten/wallet-kit'
 
 export default function ConnectWallet(){
@@ -16,5 +17,13 @@ export default function ConnectWallet(){
         <div className="wallet"><Wallet></Wallet></div>
 
 </>
+=======
+
+export default function ConnectWallet() {
+    return (
+        <>
+            <div className="wallet "><Wallet></Wallet></div>
+        </>
+>>>>>>> master
     );
 }
