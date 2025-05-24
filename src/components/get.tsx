@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
-import { useWalletKit } from '@mysten/wallet-kit';
 import { SuiClient, getFullnodeUrl } from '@mysten/sui.js/client';
 
-const PACKAGE_ID = '0x54419cdac955854ee74e49e1dd23ace8ffd736e1440c3dfed0e99166665123d8';
-=======
-import { SuiClient, getFullnodeUrl } from '@mysten/sui.js/client';
-
->>>>>>> master
 const SYSTEM_STATE_ID = '0xf44820d3eb6dfe52e563b70861083fadee7f6d9bd3be630ab40297ff953a9a35';
 
 const client = new SuiClient({ url: getFullnodeUrl('testnet') });
@@ -31,10 +24,6 @@ interface Evidence {
 }
 
 export default function GetEvidence() {
-<<<<<<< HEAD
-    const { currentAccount } = useWalletKit();
-=======
->>>>>>> master
     const [evidence, setEvidence] = useState<Evidence | null>(null);
     const [evidenceId, setEvidenceId] = useState('');
     const [error, setError] = useState<string | null>(null);
@@ -71,22 +60,11 @@ export default function GetEvidence() {
         checkMaxEvidence();
     }, []);
 
-<<<<<<< HEAD
-    const decodeBytes = (bytes: number[]): string => {
-        return new TextDecoder().decode(new Uint8Array(bytes));
-    };
-=======
->>>>>>> master
 
     const fetchEvidence = async () => {
         try {
             setLoading(true);
             setError(null);
-<<<<<<< HEAD
-            
-=======
-
->>>>>>> master
             // Convert evidence ID to number
             const evidenceIdNumber = parseInt(evidenceId, 10);
             if (isNaN(evidenceIdNumber)) {
@@ -173,83 +151,6 @@ export default function GetEvidence() {
     };
 
     return (
-<<<<<<< HEAD
-        <div className="p-4">
-            <h2 className="text-xl font-semibold mb-4">Get Evidence Details</h2>
-            {maxEvidence !== null && (
-                <div className="mb-4 p-3 bg-blue-100 text-blue-700 rounded">
-                    Current max evidence ID: {maxEvidence}<br />
-                    Next evidence ID will be: {maxEvidence + 1}
-                </div>
-            )}
-            <div className="mb-4">
-                <input
-                    type="text"
-                    placeholder="Enter Evidence ID"
-                    value={evidenceId}
-                    onChange={(e) => setEvidenceId(e.target.value)}
-                    className="border p-2 w-full mb-2 rounded"
-                />
-                <button
-                    onClick={fetchEvidence}
-                    disabled={loading}
-                    className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                    {loading ? 'Loading...' : 'Fetch Evidence'}
-                </button>
-            </div>
-
-            {error && (
-                <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">
-                    {error}
-                </div>
-            )}
-
-            {evidence && (
-                <div className="bg-gray-50 p-4 rounded shadow">
-                    <h3 className="text-lg font-semibold mb-3">Evidence Information</h3>
-                    <div className="space-y-4">
-                        <div>
-                            <p className="font-medium">Evidence ID:</p>
-                            <p>{evidence.details.evidence_id}</p>
-                        </div>
-                        <div>
-                            <p className="font-medium">Case Number:</p>
-                            <p>{evidence.details.case_no}</p>
-                        </div>
-                        <div>
-                            <p className="font-medium">FIR Number:</p>
-                            <p>{evidence.details.fir_no}</p>
-                        </div>
-                        <div>
-                            <p className="font-medium">IPFS Hash:</p>
-                            <p className="break-all">{decodeBytes(evidence.details.ipfs)}</p>
-                        </div>
-                        <div>
-                            <p className="font-medium">Content:</p>
-                            <p className="break-all">{decodeBytes(evidence.details.content)}</p>
-                        </div>
-                        <div>
-                            <p className="font-medium">Access:</p>
-                            <p>{evidence.details.access ? 'Enabled' : 'Disabled'}</p>
-                        </div>
-                        <div>
-                            <p className="font-medium">Head Address:</p>
-                            <p className="break-all">{evidence.details.head}</p>
-                        </div>
-                        <div>
-                            <p className="font-medium">Location:</p>
-                            <p>Latitude: {evidence.details.latitude}, Longitude: {evidence.details.longitude}</p>
-                        </div>
-                        <div>
-                            <p className="font-medium">Date:</p>
-                            <p>{new Date(Number(evidence.details.date) * 1000).toLocaleString()}</p>
-                        </div>
-                    </div>
-                </div>
-            )}
-        </div>
-=======
         <>
             <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-xl p-6">
                 <h2 className="text-2xl font-bold text-white mb-6">Evidence Retrieval</h2>
@@ -366,7 +267,6 @@ export default function GetEvidence() {
                     )}
             </div>
         </>
->>>>>>> master
     );
 }
 
